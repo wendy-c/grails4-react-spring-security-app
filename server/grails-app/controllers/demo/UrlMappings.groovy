@@ -1,4 +1,4 @@
-package grails4-react-spring-security
+package demo
 
 class UrlMappings {
 

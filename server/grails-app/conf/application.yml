@@ -2,7 +2,7 @@
 grails:
     profile: react
     codegen:
-        defaultPackage: grails4-react-spring-security
+        defaultPackage: demo
     gorm:
         reactor:
             # Whether to translate GORM events into Reactor events
