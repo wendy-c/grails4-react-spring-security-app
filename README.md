@@ -1,6 +1,9 @@
-#Grails 4 with React profile and spring-security-rest
+# Grails 4 React application with spring-security-rest example
 
-[Documentation to spring-security-core](https://grails-plugins.github.io/grails-spring-security-core/latest/)
+[Documentation for Grails 4](http://docs.grails.org/latest/)
+
+[Documentation for spring-security-core](https://grails-plugins.github.io/grails-spring-security-core/latest/)
+
 [Documentation for spring-security-rest](http://alvarosanchez.github.io/grails-spring-security-rest/latest/docs/)
 
 To start the server:
@@ -11,7 +14,7 @@ To start the client:
 
 -----
 
-#Steps to build your own:
+# Steps to build your own
 
 1. Create a grails 4 project with React profile
 `grails create-app demo --profile=react`
@@ -131,9 +134,9 @@ Side note: `.gradle` should be in the `.gitignore` but the generated file does n
 
 -----
 
-#Testing your REST API:
+# Testing your REST API
 
-1. Run `curl -i 0:8080/api/animal` in your terminal should see somehting like this:
+1. Run `curl -i 0:8080/api/animal` in the terminal, we see that we are not authorized.
 
 ```
 HTTP/1.1 401 
@@ -146,9 +149,11 @@ Date: Mon, 27 Jul 2020 15:22:10 GMT
 ```
 
 2. Try logging in with the `username` and `password` we created earlier.
+
 `curl -i -H "Content-Type: application/json" --data '{"username":"me","password":"password"}' 0:8080/api/login`
 
-You should see an access-token
+We should see an access-token is returned, this is what we need to provide to our server in order to authenticate our request.
+
 ```
 HTTP/1.1 200 
 Cache-Control: no-store
@@ -160,7 +165,7 @@ Date: Mon, 27 Jul 2020 15:23:17 GMT
 {"username":"me","roles":["ROLE_ADMIN"],"token_type":"Bearer","access_token":"pnfj96jfgmoc8qhob34ibis61tjqndn7"
 ```
 
-3. With the access-token, make another request.
+3. With the access-token, set it to the `Authorization` header and try making the request again.
 ```
 curl -i -H "Authorization: Bearer pnfj96jfgmoc8qhob34ibis61tjqndn7" 0:8080/api/animal
 ```
