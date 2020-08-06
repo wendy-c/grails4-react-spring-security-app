@@ -91,6 +91,7 @@ class Animal {
 }
 ```
 `@Secured(['ROLE_ADMIN'])` will only be accessible to users with authority `ROLE_ADMIN`
+
 `@Resource(uri = '/api/animal')` will expose the the api
 
 9. Create a dummy user in `init/demo/Bootstrap.groovy` with `ROLE_ADMIN` and some data in the `Animal` class
@@ -130,7 +131,7 @@ class BootStrap {
 
 10. Start the server `./gradlew server:bootRun`
 
-Side note: `.gradle` should be in the `.gitignore` but the generated file does not target the folder correctly. To fix this, create another `.gitignore` at the root level and remove `.gradle` from `server/.getignore`.
+Side note: `.gradle` should be in the `.gitignore` but the generated file does not target the folder correctly. To fix this, create another `.gitignore` at the root level and remove `.gradle` from `server/.gitignore`.
 
 -----
 
