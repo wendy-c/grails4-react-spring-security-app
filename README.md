@@ -90,7 +90,7 @@ class Animal {
     }
 }
 ```
-`@Secured(['ROLE_ADMIN'])` will allow only be accessible to users with authority `ROLE_ADMIN`
+`@Secured(['ROLE_ADMIN'])` will only be accessible to users with authority `ROLE_ADMIN`
 `@Resource(uri = '/api/animal')` will expose the the api
 
 9. Create a dummy user in `init/demo/Bootstrap.groovy` with `ROLE_ADMIN` and some data in the `Animal` class
